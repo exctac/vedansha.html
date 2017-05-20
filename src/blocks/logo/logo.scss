@@ -5,4 +5,12 @@
 .logo {
   display: block;
   white-space: nowrap;
+  display: inline-block;
+  width: px-to-rem(200);
+  height: px-to-rem(160);
+  vertical-align: top;
+  &__img {
+    width: 100%;
+    height: auto;
+  }
 }

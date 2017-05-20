@@ -2,16 +2,14 @@
 // модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
 // Не пишите здесь другие селекторы.
 
-$toggler-part-height:         3px !default;
-$toggler-part-bg-color:       #000 !default;
-
 .burger {
+  $block-name:                &;
   position: relative;
   z-index: 1;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   width: 30px;
-  height: 30px;
+  height: 32px;
   user-select: none;
   cursor: pointer;
 
@@ -63,6 +61,20 @@ $toggler-part-bg-color:       #000 !default;
       &:after {
         transform: rotate3d(0, 0, 1, -45deg);
       }
+    }
+  }
+  &--white {
+    > span {
+      background: $color-white;
+      &:before,
+      &:after {
+        background: $color-white;
+      }
+    }
+  }
+  &--white#{$block-name}--close {
+    > span {
+      background: transparent;
     }
   }
 }

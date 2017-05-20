@@ -1,0 +1,42 @@
+// В этом файле должны быть стили только для БЭМ-блока social, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Не пишите здесь другие селекторы.
+
+.social {
+  $block-name:          &;
+  font-size: 0;
+  &--footer {
+    text-align: center;
+  }
+  &__item {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 1rem;
+    & + & {
+      margin-left: 1rem;
+    }
+    #{$block-name}--white & {
+      color: $color-white;
+      border-color: $color-white;
+      @include transition(all);
+      &:hover {
+        opacity: .34;
+      }
+
+    }
+    #{$block-name}--footer & + & {
+      margin-left: 2rem;
+    }
+    &--circle {
+      border: 0.125em solid $color-green;
+      line-height: 2em;
+      width: 2em;
+      height: 2em;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      border-radius: 50%;
+    }
+
+  }
+
+}

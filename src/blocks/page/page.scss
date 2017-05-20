@@ -9,26 +9,47 @@
 }
 
 .page { // html
+  $block-name:                &;
   box-sizing: border-box;
-  font-size: 10px;
+  font-size: $font-size;
+  line-height: $line-height;
+  font-family: $font-family;
+  color: $color-gray;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -ms-overflow-style: scrollbar;
   -ms-text-size-adjust: 100%; /* stylelint-disable-line  property-no-vendor-prefix */
-  min-width: 320px;
   min-height: 100%;
+  height: 100%;
+  background-image: url(../img/blue-sky-desktop.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  -webkit-background-size:cover;
+  background-size:cover;
+  &__line {
+    padding: px-to-rem(16) 0;
 
-  &__inner {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-  }
-
-  &__content {
-    flex-grow: 1;
-  }
-
-  &__footer-wrapper {
-    flex-shrink: 0;
+    &--gray-light {background-color: #F8F8F8;}
+    &--gray {background-color: #898989;}
+    &--white {background-color: #FFF;}
+    &--green {background-color: #70C051;}
+    &--yellow {background-color: #FFC859;}
+    &--orange {background-color: #F26829;}
+    &--blue {background-color: #C1E0FF;}
+    &--blue-dark {background-color: #042550;}
+    &--header-top {
+      padding: 0;
+    }
+    &--header-middle {
+      text-align: center;
+    }
+    &--header-bottom {
+      @extend .page__line--header-top;
+      background-color: rgba(0,0,0,.47);
+    }
+    &--slider {
+      height: 440px;
+    }
   }
 }
 
@@ -39,7 +60,6 @@
 }
 
 body {
-  background-color: #fff;
   margin: 0;
   min-height: 100%;
 }

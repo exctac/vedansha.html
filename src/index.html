@@ -1,37 +1,52 @@
 <!DOCTYPE html>
-<html class="no-js  page" lang="ru">
+<html class="js page" lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Vedanshi</title>
+    <meta name="description" content="">
+    @@include('_include/page_head.html')
+  </head>
 
-<head>
-  <meta charset="utf-8">
-  <title>NTH start project</title>
-  <meta name="description" content="">
-  @@include('_include/page_head.html')
-</head>
-
-<body>
-
-  <div class="page__inner">
-
-    <div class="page__content">
-
-      @@include('blocks/page-header/page-header.html')
-
-      <main role="main">
-
-        <h1>NTH start project</h1>
-
-        <p><a href="blocks-demo.html">Страница с демкой компонентов</a></p>
-
-      </main>
-
+  <body class="layout">
+    <div class="layout__row">
+      @@include('_include/page_header.html')
     </div>
-
-    <div class="page__footer-wrapper">
-      @@include('blocks/page-footer/page-footer.html')
+    <div class="layout__row layout__row_total">
+      <div class="page__line">
+          <div class="central">
+              <div class="slick-slider slick-slider--offer">
+                  <div class="box"><img src="img/slider_img.jpg" alt=""></div>
+                  <div class="box"><img src="img/slider_img.jpg" alt=""></div>
+                  <div class="box"><img src="img/slider_img.jpg" alt=""></div>
+              </div>
+          </div>
+      </div>
+      <div class="page__line page__line--orange">
+          <div class="central grid grid--with-gutter">
+              <div class="grid__cell article article--white">
+                  <div class="article__title">Dr. Sanjeev K. Pandey</div>
+                  <div class="article__subtitle">Yogacharya, PhD Yogatherapie & Naturopathy</div>
+                  <div class="article__content">
+                      <div class="article_image box"><img src="img/teacher.jpg" alt=""></div>
+                      <p>The Pandey Ji Institute of Yoga and alternative medicine was established to provide education in vedic science, to help human to controll their emotions, remove fears, to improve their fortune and life, to find himself in the society of modern technology, to open his power in order to feel harmony and happiness and provide holistic treatment, supporting programs with yogic and natural ayurvedic methods in commonand non-curative deseases<br>Our Institute accreditedby International Yoga Alliance and Alternative Medical Counsil Colcatta (India). Our study materials contain basic principles of ancient yogic tradition and self-experience of the teachers following international standart. All our teachers have long experience of practice in vedic science and continuously improve their qualification by practice it herb himalayan masters, monks or Universities. Our students could get basic, intermediate and advanced knowledge of Asana, Pranayama, Meditation, Ayurveda, Naturopathy, Astrology, Yoga Thearapy or getDegree, Diploma and Certificates in Alternative Medicine through on-line education. </p>
+                  </div>
+                  <div class="article__footer">
+                      <div class="social social--white">
+                          <a href="" class="social__item"><span class="icon icon-facebook"></span></a>
+                          <a href="" class="social__item"><span class="icon icon-tumblr"></span></a>
+                          <a href="" class="social__item"><span class="icon icon-linkedin"></span></a>
+                          <a href="" class="social__item"><span class="icon icon-twitter"></span></a>
+                          <a href="" class="social__item"><span class="icon icon-vimeo"></span></a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
     </div>
-
-  </div>
-
+    <div class="layout__row">
+      @@include('_include/page_footer.html')
+    </div>
   @@include('_include/page_bottom.html')
-</body>
+  </body>
+
 </html>

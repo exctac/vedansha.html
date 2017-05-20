@@ -1,0 +1,25 @@
+.box {
+  -webkit-border-radius: $border-radius;
+  -moz-border-radius: $border-radius;
+  border-radius: $border-radius;
+  overflow: hidden;
+  &--styling {
+    margin: 1rem 0;
+    min-height: 100px;
+    background: $color-gray;
+  }
+  img {
+    width: 100%;
+  }
+
+}
+.central {
+  padding: 0 1rem;
+  width: 100%;
+  max-width: px-to-rem(960);
+  @include bp(px-to-rem(992)) {
+    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
