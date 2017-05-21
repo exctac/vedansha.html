@@ -56,7 +56,9 @@
     "slick-carousel": [],
     "sass-grid": [],
     "article": [],
-    "social": []
+    "social": [],
+    "heading": [],
+    "text-color": []
   },
   "addCssBefore": [
     "./src/scss/variables.scss",

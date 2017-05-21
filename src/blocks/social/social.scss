@@ -7,20 +7,28 @@
   font-size: 0;
   &--footer {
     text-align: center;
+    margin-top: 1rem;
+    border-top: 1px solid $color-white;
+    padding-top: 1rem;
   }
   &__item {
     display: inline-block;
     vertical-align: middle;
     font-size: 1rem;
+    line-height: 1em;
     & + & {
       margin-left: 1rem;
+    }
+    > .icon {
+      vertical-align: baseline;
     }
     #{$block-name}--white & {
       color: $color-white;
       border-color: $color-white;
-      @include transition(all);
+      @include transitions(all);
       &:hover {
-        opacity: .34;
+        color: darken($color-white, 10%);
+        border-color: darken($color-white, 10%);
       }
 
     }
@@ -29,9 +37,10 @@
     }
     &--circle {
       border: 0.125em solid $color-green;
-      line-height: 2em;
       width: 2em;
+      text-align : center;
       height: 2em;
+      padding: .375em 0;
       -webkit-border-radius: 50%;
       -moz-border-radius: 50%;
       border-radius: 50%;

@@ -28,7 +28,7 @@ $transition-time:             0.3s !default;
       .js & {
         overflow-y: auto;
         max-height: 0;
-        @include transition(max-height);
+        @include transitions(max-height);
       }
 
       .js #{$block-name}--open & {
@@ -68,7 +68,7 @@ $transition-time:             0.3s !default;
       }
     }
     @media (min-width: $menu-desktop-width) {
-      @include transition(background-color);
+      @include transitions(background-color);
       position: relative;
       flex: 1 1 auto;
       text-align: center;

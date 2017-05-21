@@ -199,8 +199,8 @@ pre {
 
 a {
   color: $link-color;
+  @include transitions(all);
 }
 a:hover {
   color: $link-color--hover;
-  @include transition(color);
 }

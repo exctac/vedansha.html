@@ -4,7 +4,7 @@
 //
 // Pass in any number of transitions
 
-@mixin transition($transitions...) {
+@mixin transitions($transitions...) {
   $unfoldedTransitions: ();
   @each $transition in $transitions {
     $unfoldedTransitions: append($unfoldedTransitions, unfoldTransition($transition), comma);

@@ -2,43 +2,54 @@
 // модификаторов, псевдоселекторов, псевдоэлементов, $media-условий...
 // Не пишите здесь другие селекторы.
 
-$gray-lighter:                hsl(0, 0%, 80%);
-$gray-lightest:               hsl(0, 0%, 90%);
-$text-color:                  hsl(0, 0%, 10%);
-$line-height:                 1.375em;
+$button-bg-color:             #898989 !default;
+$button-bg-color--hover:      darken(#898989, 10%) !default;
+$button-text-color:           #fff !default;
+$button-text-color--hover:    #fff !default;
 
-$field-padding-vertical:      0.3em;
-$field-padding-horizontal:    0.7em;
+$button-line-height:          1.25em !default;
+$button-font-size:            1rem !default;
+$button-border-radius:        4px !default;
 
-$border-radius:               3px;
+$button-padding-vertical:      0.375em !default;
+$button-padding-horizontal:    1em !default;
+
+$default-buttons-colors: (
+    "green"     : #70C051,
+    "yellow"    : #FFC859,
+    "orange"    : #F26829,
+    "blue"      : #C1E0FF,
+    "blue-dark" : #042550
+) !default;
 
 .btn {
+  $block-name:         &;
   box-sizing: border-box;
   display: inline-block;
   margin: 0;
-  padding: $field-padding-vertical  $field-padding-horizontal;
+  padding: $button-padding-vertical  $button-padding-horizontal;
   white-space: nowrap;
   vertical-align: middle;
   user-select: none;
   text-align: center;
-  font-size: 1em;
+  font-size: $button-font-size;
   font-family: inherit;
-  line-height: $line-height;
+  line-height: $button-line-height;
   text-decoration: none;
   text-transform: none;
-  color: $text-color;
-  border-radius: $border-radius;
-  border: 1px solid $gray-lighter;
-  background-color: $gray-lightest;
+  color: $button-text-color;
+  border-radius: $button-border-radius;
+  border: none;
+  background-color: $button-bg-color;
   background-image: none;
   cursor: pointer;
+  @include transitions(all);
 
   &:hover,
   &:focus {
     text-decoration: none;
-    color: $text-color;
-    background-color: darken($gray-lightest, 10%);
-    border-color: darken($gray-lighter, 12%);
+    color: $button-text-color--hover;
+    background-color: darken($button-bg-color, 10%);
   }
 
   &:active,
@@ -49,35 +60,30 @@ $border-radius:               3px;
   &--disabled,
   &:disabled {
     cursor: not-allowed;
-    opacity: $opacity;
     color: $text-color;
-    background-color: $gray-lightest;
-    border-color: $gray-lighter;
+    background-color: lighten($button-bg-color, 10%);
 
     @at-root a.btn--disabled {
       pointer-events: none;
     }
   }
 
+  @each $color-name, $hex in $default-buttons-colors {
+    &--#{$color-name} {
+      color: #fff;
+      background-color: $hex;
 
+      &:hover,
+      &:focus {
+        color: #fff;
+        background-color: darken($hex, 10%);
+      }
 
-  // &--main {
-  //   color: #fff;
-  //   background-color: $color-main;
-  //   border: 1px solid $color-main;
-
-  //   &:hover,
-  //   &:focus {
-  //     color: #fff;
-  //     background-color: darken($color-main, 10%);
-  //     border-color: darken($color-main, 12%);
-  //   }
-
-  //   &--disabled,
-  //   &:disabled {
-  //     color: #fff;
-  //     background-color: $color-main;
-  //     border-color: $color-main;
-  //   }
-  // }
+      &#{$block-name}--disabled,
+      &:disabled {
+        color: #fff;
+        background-color: lighten($hex, 10%);
+      }
+    }
+  }
 }

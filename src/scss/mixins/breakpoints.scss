@@ -38,3 +38,18 @@ $breakpoints: (
 	}
 
 }
+
+@mixin generate-styles-bp($class, $bp: $breakpoints) {
+  @if $class {
+    @each $breakpoint, $width in $bp {
+      @media (min-width: $width) {
+        .#{$class}-#{$breakpoint} {
+          @content;
+        }
+      }
+    }
+  }
+  @else {
+    @error "`Name selector` is not a valid";
+  }
+}
