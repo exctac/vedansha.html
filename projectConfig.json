@@ -58,7 +58,8 @@
     "article": [],
     "social": [],
     "heading": [],
-    "text-color": []
+    "text-color": [],
+    "comment-cloud": []
   },
   "addCssBefore": [
     "./src/scss/variables.scss",

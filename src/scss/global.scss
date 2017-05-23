@@ -15,7 +15,10 @@
 
 }
 .spacer {
-  padding-top: 1rem
+  padding-top: 1rem;
+  &--2x {
+    padding-top: 2rem
+  }
 }
 .central {
   padding: 0 1rem;

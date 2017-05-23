@@ -9,7 +9,7 @@
     text-align: center;
     margin-top: 1rem;
     border-top: 1px solid $color-white;
-    padding-top: 1rem;
+    padding-top: .5rem;
   }
   &__item {
     display: inline-block;
@@ -32,8 +32,11 @@
       }
 
     }
-    #{$block-name}--footer & + & {
-      margin-left: 2rem;
+    #{$block-name}--footer & {
+      margin: .5rem 1rem 0 1rem;
+      @include bp(xs){
+        margin: .5rem 1rem 0 1rem;
+      }
     }
     &--circle {
       border: 0.125em solid $color-green;

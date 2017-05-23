@@ -58,6 +58,13 @@
         background-image: url(../img/shiva.png);
       }
     }
+    &--bgi-testimonials {
+      background-repeat: no-repeat;
+      background-position: center;
+      -webkit-background-size: 0 100%;
+      background-size: 0 100%;
+      background-image: url(../img/testimonials.jpg);
+    }
 
   }
 }

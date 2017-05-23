@@ -2,15 +2,18 @@
 // модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
 // Не пишите здесь другие селекторы.
 
-$heading-font-size       : 1.5rem !default;
-$heading-font-size-small : 1.5rem !default;
-$heading-line-height     : normal !default;
+$heading-font-size        : 1.5rem !default;
+$heading-font-size-small  : 1.25rem !default;
+$heading-font-size-medium : 1.25rem !default;
+$heading-line-height      : normal !default;
 
 .heading {
   font-size   : $heading-font-size;
   line-height : $heading-line-height;
-
-  &--medium {}
+  &--medium {
+    line-height : normal;
+    font-size   : $heading-font-size-medium;
+  }
   &--small {
     line-height : normal;
     font-size   : $heading-font-size-small;

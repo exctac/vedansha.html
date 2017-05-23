@@ -1,0 +1,35 @@
+// В этом файле должны быть стили только для БЭМ-блока comment-cloud, его элементов, 
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Не пишите здесь другие селекторы.
+$border-radius: 4px !default;
+
+.comment-cloud {
+  border-radius : $border-radius;
+  padding       : 1rem;
+  border        : 1px solid $color-white;
+  position      : relative;
+  &:after {
+    content  : "";
+    position : absolute;
+    height   : 20px;
+    bottom   : -19px;
+    left     : 16px;
+    width    : 18px;
+    background : url("../img/arrow.png") 0 0 no-repeat;
+    -webkit-transform: rotate(90deg);
+    -moz-transform   : rotate(90deg);
+    -ms-transform    : rotate(90deg);
+    -o-transform     : rotate(90deg);
+    transform        : rotate(90deg);
+    @include bp(sm) {
+      top   : 16px;
+      left :auto;
+      right : -18px;
+      -webkit-transform : none;
+      -moz-transform    : none;
+      -ms-transform     : none;
+      -o-transform      : none;
+      transform         : none;
+    }
+  }
+}
