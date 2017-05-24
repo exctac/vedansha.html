@@ -29,14 +29,14 @@ $text-color:                  hsl(0, 0%, 10%) !default;
 
   &__link {
     color: $color-white;
-    text-decoration: none;
+    text-decoration: underline;
     line-height: inherit;
     display : inline-block;
     vertical-align: middle;
     &:hover,
     &:focus {
       color: darken($color-white, 10%);
-      text-decoration: underline;
+      text-decoration: none;
     }
   }
 }
