@@ -26,13 +26,16 @@
     }
   }
 
-  &_image {
+  &__image {
     float: left;
     margin-right: 2rem;
     margin-bottom: 2rem;
     img {
       width: 100%;
       display: block;
+      -webkit-border-radius :$border-radius;
+      -moz-border-radius    :$border-radius;
+      border-radius         :$border-radius;
     }
   }
   &__footer {

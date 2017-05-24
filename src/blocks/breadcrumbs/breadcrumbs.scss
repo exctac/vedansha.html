@@ -9,29 +9,34 @@ $text-color:                  hsl(0, 0%, 10%) !default;
 .breadcrumbs {
   padding: 0;
   list-style: none;
-  margin: $line-height 0;
-
+  margin: 0;
   &__item {
     display: inline-block;
-    margin-right: 0.6em;
     white-space: nowrap;
-
+    vertical-align: middle;
+    line-height: $line-height;
+    color: $color-white;
     &:not(:last-child):after {
-      content: '>';
+      font-family: "FontAwesome";
+      content: '\f105';
       display: inline-block;
-      margin-left: 0.8em;
-      color: $color-gray;
+      margin: 0 1rem;
+      font-size: px-to-rem(18);
+      vertical-align: middle;
+      color: transparentize($color-white, 0.5);
     }
   }
 
   &__link {
-    color: $text-color;
+    color: $color-white;
     text-decoration: none;
-
+    line-height: inherit;
+    display : inline-block;
+    vertical-align: middle;
     &:hover,
     &:focus {
-      color: $text-color;
-      text-decoration: none;
+      color: darken($color-white, 10%);
+      text-decoration: underline;
     }
   }
 }

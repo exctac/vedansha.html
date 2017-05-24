@@ -10,6 +10,7 @@ $heading-line-height      : normal !default;
 .heading {
   font-size   : $heading-font-size;
   line-height : $heading-line-height;
+  margin: 0;
   &--medium {
     line-height : normal;
     font-size   : $heading-font-size-medium;

@@ -67,6 +67,15 @@
     }
 
   }
+  &__title {
+    padding: 0 1rem 1rem;
+    &--hollow-side {
+      padding: 0;
+    }
+    &--hollow-full {
+      padding: 0;
+    }
+  }
 }
 
 *,
