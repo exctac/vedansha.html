@@ -9,8 +9,10 @@
 }
 .spacer {
   padding-top: 1rem;
-  &--2x {
-    padding-top: 2rem
+  @for $i from 1 through 3 {
+    &--#{$i}x {
+      padding-top: #{$i}rem
+    }
   }
 }
 .central {

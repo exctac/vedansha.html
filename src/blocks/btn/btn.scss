@@ -56,7 +56,12 @@ $default-buttons-colors: (
   &:focus {
     @include field-focus;
   }
-
+  &--underline {
+    text-decoration : underline;
+    &:hover {
+      text-decoration : none;
+    }
+  }
   &--disabled,
   &:disabled {
     cursor: not-allowed;
@@ -67,6 +72,15 @@ $default-buttons-colors: (
       pointer-events: none;
     }
   }
+  &--expand {
+    display: block;
+    width: 100%;
+  }
+  &--auto {
+    display: inline-block;
+    width: auto;
+  }
+
 
   @each $color-name, $hex in $default-buttons-colors {
     &--#{$color-name} {
@@ -87,3 +101,12 @@ $default-buttons-colors: (
     }
   }
 }
+
+@include generate-styles-bp(btn--expand){
+  display: block;
+  width: 100%;
+};
+@include generate-styles-bp(btn--auto){
+  display: inline-block;
+  width: auto;
+};

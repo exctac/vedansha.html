@@ -21,7 +21,7 @@ $line-height:                 1.375em !default;
     border: 0;
 
     &:not(:last-child) {
-      margin-bottom: $line-height;
+      margin-bottom: 1rem;
     }
   }
 

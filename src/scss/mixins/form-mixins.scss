@@ -19,5 +19,17 @@
   $opacity:                   0.7 !default;
 
   outline: 0;
-  box-shadow: 0 0 0 2px rgba($color-main, $opacity);
+  box-shadow: none;
+}
+@mixin field {
+  display: block;
+  width: 100%;
+  background-color : $color-blue;
+  color: $color-white;
+  padding: $field-padding-vertical  $field-padding-horizontal;
+  line-height: $line-height;
+  font-size: 1rem;
+  font-family : $font-family;
+  border: none;
+  border-radius: $border-radius;
 }

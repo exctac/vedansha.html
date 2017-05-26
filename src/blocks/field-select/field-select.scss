@@ -2,41 +2,45 @@
 // модификаторов, псевдоселекторов, псевдоэлементов, $media-условий...
 // Не пишите здесь другие селекторы.
 
-$gray-lightest:               hsl(0, 0%, 90%);
-$border-color:                hsl(0, 0%, 60%) !default;
-
-$line-height:                 1.375em !default;
-
-$border-radius:               3px !default;
-
 .field-select {
   display: block;
-  margin-bottom: ($line-height / 2);
-
+  margin-bottom: $field-margin-bottom;
   &__name {
-    font-weight: 700;
     display: block;
-    margin-bottom: 0.4em;
   }
 
-  &__input-wrap {}
+
+  &__select-wrap {
+    position: relative;
+    border-radius: $border-radius;
+    background-color: $color-blue;
+    height: 2rem;
+    &:after {
+      position: absolute;
+      right: 0;
+      top : 0;
+      content: "\f107";
+      font-family : "FontAwesome";
+      height: 100%;
+      width: 2rem;
+      line-height: 2rem;
+      border-top-right-radius: $border-radius;
+      border-bottom-right-radius: $border-radius;
+      text-align : center;
+      background-color : $color-green;
+      color: $color-white;
+    }
+  }
 
   &__select {
-    display: inline-block;
-    vertical-align: middle;
-    width: 100%;
-    line-height: $line-height;
-    padding: $field-padding-vertical $field-padding-horizontal;
-    font-size: inherit;
-    font-family: inherit;
-    border: 1px solid $border-color;
-    border-radius: $border-radius;
+    @include field;
+    position : absolute;
+    top :0;
+    left: 0;
+    padding-right: 2rem;
+    z-index : 2;
+    background-color : transparent;
     appearance: none;
-    background-color: #fff;
-    background-image: svg-load('../blocks/field-select/img_to_bg/select-down.svg');
-    background-repeat: no-repeat;
-    background-position: right 0.3em center;
-    background-size: 1.063em 0.688em;
 
     &[multiple] {
       background-image: none;
@@ -57,6 +61,10 @@ $border-radius:               3px !default;
       cursor: default;
       background-color: $gray-lightest;
     }
+    option {
+      background-color : $color-blue;
+    }
+
   }
 
   &__help-text {
