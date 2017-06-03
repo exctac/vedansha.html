@@ -18,65 +18,69 @@ $field-padding-horizontal:    0.7em !default;
 
   $block-name:                &;
 
-  margin-top: $line-height;
-  margin-bottom: $line-height;
-
   &__links {
     margin: 0;
     padding: 0;
     list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-end;
+    font-size: 0;
     cursor: pointer;
 
     .no-js & {
       display: none;
     }
-
-    &:after {
-      content: '';
-      flex-grow: 1;
-      height: 1px;
-      background-color: $border-color;
-    }
   }
 
   &__link-wrap {
+    display: block;
+    font-size: 1.25rem;
     position: relative;
-    border: 1px solid $border-color;
-
-    &:not(:last-child) {
-      border-right: none;
+    @include bp (lg) {
+      display: inline-block;
+    }
+    &:last-child {
+      #{$block-name}__link {
+        margin-bottom: -$border-radius;
+        padding: 0.625rem  1rem 0.875rem  1rem;
+      }
     }
 
     &--active {
-
       #{$block-name}__link {
-        color: $text-color;
-        background-color: #fff;
+        background: $color-white;
+        color: $color-orange;
+        text-decoration: none;
+        &:hover {
+          color: darken($color-orange, 15%);
+        }
       }
     }
   }
 
   &__link {
     display: block;
-    padding: $field-padding-vertical $field-padding-horizontal;
-    color: $text-color--muted;
-    text-decoration: none;
-    background-color: $gray-lightest;
-
-    &:hover,
-    &:focus {
-      color: $text-color--muted;
+    -webkit-border-radius: $border-radius;
+    -moz-border-radius: $border-radius;
+    border-radius: $border-radius;
+    padding: 0.625rem  1rem 0.625rem  1rem;
+    color: $color-green;
+    text-decoration: underline;
+    @include bp (lg) {
+      display: inline-block;
+      margin-bottom: -$border-radius;
+      padding: 0.625rem  1rem 0.875rem  1rem;
+    }
+    &:hover{
+      color: darken($color-green, 15%);
     }
   }
 
   &__content-wrapper {
     display: block;
-    padding: $field-padding-vertical $field-padding-horizontal;
-    border: 1px solid $border-color;
-    border-top: none;
+    padding: 1rem;
+    background: $color-white;
+    -webkit-border-radius: $border-radius;
+    -moz-border-radius: $border-radius;
+    border-radius: $border-radius;
   }
 
   &__content-item {
@@ -93,4 +97,3 @@ $field-padding-horizontal:    0.7em !default;
     }
   }
 }
-

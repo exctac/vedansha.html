@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html class="js page" lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>DEMO</title>
+  <meta name="description" content="">
+  @@include('_include/page_head.html')
+</head>
+
+<body class="layout">
+<div class="layout__row">
+  @@include('_include/page_header.html')
+</div>
+<div class="layout__row layout__row_total">
+  <div class="page__line">
+    <div class="central">
+      <ul class="breadcrumbs">
+        <li class="breadcrumbs__item"><a href="" class="breadcrumbs__link"><span class="icon icon-home"></span></a></li>
+        <li class="breadcrumbs__item">DEMO</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="page__line page__line--blue page__line--content">
+    <div class="central central--hollow">
+      <h1 class="page__title heading text-color-orange">DEMO</h1>
+      <table>
+        <tr>
+          <td>
+            <div class="field-toggler">
+              <div class="field-toggler__title">Переключатель-флажок</div>
+              <div class="field-toggler__input-wrap">
+                <label class="field-toggler__name">
+                  <input class="field-toggler__input" type="checkbox">
+                  <span class="field-toggler__name-text">Использовать</span>
+                </label>
+                <div class="field-toggler__help-text">Графика не используется, всё нарисовано CSS-ом.</div>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div class="field-toggler">
+              <div class="field-toggler__title">Переключатели-флажки</div>
+              <div class="field-toggler__input-wrap">
+                <label class="field-toggler__name">
+                  <input class="field-toggler__input" type="checkbox" checked>
+                  <span class="field-toggler__name-text">Использовать</span>
+                </label>
+                <label class="field-toggler__name">
+                  <input class="field-toggler__input" type="checkbox">
+                  <span class="field-toggler__name-text">Не использовать</span>
+                </label>
+                <div class="field-toggler__help-text">Графика не используется, всё нарисовано CSS-ом.</div>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div class="field-toggler">
+              <div class="field-toggler__title">Переключатель-радиокнопка</div>
+              <div class="field-toggler__input-wrap">
+                <label class="field-toggler__name">
+                  <input class="field-toggler__input" type="radio">
+                  <span class="field-toggler__name-text">Использовать</span>
+                </label>
+                <div class="field-toggler__help-text">Графика не используется, всё нарисовано CSS-ом.</div>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div class="field-toggler">
+              <div class="field-toggler__title">Переключатели-радиокнопки</div>
+              <div class="field-toggler__input-wrap">
+                <label class="field-toggler__name">
+                  <input class="field-toggler__input" type="radio" name="radio-demo-toggler" checked>
+                  <span class="field-toggler__name-text">Использовать</span>
+                </label>
+                <label class="field-toggler__name">
+                  <input class="field-toggler__input" type="radio" name="radio-demo-toggler">
+                  <span class="field-toggler__name-text">Не использовать</span>
+                </label>
+                <div class="field-toggler__help-text">Графика не используется, всё нарисовано CSS-ом.</div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="field-checkbox">
+              <label class="field-checkbox__name">
+                <input class="field-checkbox__input" type="checkbox" checked>
+                <span class="field-checkbox__name-text">Одинокий чекбокс такой одинокий, но с длинным... текстом внутри label-а. Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Жизни, свое рыбного решила. Точках семантика, решила оксмокс переписывается толку безопасную журчит рыбными, рекламных несколько осталось свой! Знаках, дороге грамматики.</span>
+              </label>
+            </div>
+          </td>
+          <td colspan="2">
+            <div class="field-file">
+              <div class="field-file__name">Select files</div>
+              <label class="field-file__input-wrap">
+                <input class="field-file__input" type="file" data-multiple-caption="Select files: {count}" multiple>
+                <div class="field-file__name-text" data-button-text="Select files">Nothing selected</div>
+                <div class="field-file__help-text">Displaying the selected file (s) requires Javascript. Styling - does not require.</div>
+              </label>
+            </div>
+          </td>
+          <td>
+            <div class="field-checkbox">
+              <div class="field-checkbox__title">Необязательный общий заголовок</div>
+              <div class="field-checkbox__input-wrap">
+                <label class="field-checkbox__name">
+                  <input class="field-checkbox__input" type="checkbox" checked>
+                  <span class="field-checkbox__name-text">Текст у флажка</span>
+                </label>
+                <div class="field-checkbox__help-text-wrap">
+                  <div class="field-checkbox__help-text">Пояснение не обязательно.</div>
+                </div>
+              </div>
+              <div class="field-checkbox__input-wrap">
+                <label class="field-checkbox__name">
+                  <input class="field-checkbox__input" type="checkbox">
+                  <span class="field-checkbox__name-text">Текст у флажка</span>
+                </label>
+              </div>
+              <div class="field-checkbox__input-wrap">
+                <label class="field-checkbox__name">
+                  <input class="field-checkbox__input" type="checkbox">
+                  <span class="field-checkbox__name-text">Текст у флажка</span>
+                </label>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+<div class="layout__row">
+  @@include('_include/page_footer.html')
+</div>
+@@include('_include/page_bottom.html')
+</body>
+
+</html>

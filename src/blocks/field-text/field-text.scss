@@ -54,10 +54,8 @@ $text-color--muted:           hsl(0, 0%, 50%) !default;
     }
 
     @at-root textarea#{&} {
-      $textarea-height: ($line-height * 2) + ($field-padding-vertical * 2);
-
       height: auto;
-      min-height: calc(#{$textarea-height} + 2px);
+      min-height: px-to-rem(100);
       resize: vertical;
     }
   }

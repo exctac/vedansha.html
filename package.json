@@ -62,6 +62,7 @@
     "yaspeller": "^3.1.0"
   },
   "dependencies": {
+    "fancybox": "^3.0.0",
     "ismobilejs": "^0.4.0",
     "jquery": "^3.1.1",
     "jquery-migrate": "^3.0.0",

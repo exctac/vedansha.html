@@ -39,12 +39,13 @@
     &--blue-dark {background-color: #042550;}
     &--header-top {
       padding: 0;
+      background-color: rgba(0,0,0,.66);
     }
     &--header-middle {
       text-align: center;
     }
     &--header-bottom {
-      @extend .page__line--header-top;
+      padding: 0;
       background-color: rgba(0,0,0,.47);
     }
     &--slider {
@@ -70,10 +71,13 @@
   &__title {
     padding: 0 1rem 1rem;
     &--hollow-side {
-      padding: 0 0rem 1rem;
+      padding: 0 0 1rem;
     }
     &--hollow-full {
       padding: 0;
+    }
+    &--hollow-front {
+      padding: 0 1rem 0;
     }
   }
 }

@@ -6,8 +6,12 @@
   &--white {
     background-color : $color-white;
   }
+  &--green {
+    background-color : $color-green;
+  }
 }
 .spacer {
+  width: 100%;
   padding-top: 1rem;
   @for $i from 1 through 3 {
     &--#{$i}x {
@@ -97,6 +101,7 @@ $default-text-align: (
   .show {
     display : block;
   }
+
   @include generate-styles-bp (show) {
     display : block;
   }
@@ -113,5 +118,55 @@ $default-text-align: (
     display : block;
     width : 100%;
     height :100%
+  }
+}
+.map {
+  margin: 1rem 0;
+  iframe {}
+}
+
+.blog {
+  $block-name: &;
+  &--galery {
+    display: block;
+    #{$block-name}__item {
+      display: table;
+      height: 100%;
+      width: 100%;
+      padding: 1rem;
+      -webkit-border-radius: $border-radius;
+      -moz-border-radius: $border-radius;
+      border-radius: $border-radius;
+
+      &:hover {
+        #{$block-name}__item-title {
+          color: $color-orange;
+          text-decoration: none;
+        }
+      }
+    }
+    #{$block-name}__item:hover {
+      background-color: $color-white;
+    }
+    #{$block-name}__item-image {
+      padding: 50%;
+      background-position: center center;
+      background-size: cover;
+      background-color: $color-white;
+      display: block;
+      -webkit-border-radius: $border-radius;
+      -moz-border-radius: $border-radius;
+      border-radius: $border-radius;
+    }
+    #{$block-name}__item-title {
+      text-align: center;
+      display: table-row;
+      height: 100%;
+      &-inner {
+        display: table-cell;
+        vertical-align: middle;
+        padding-top: 1rem;
+      }
+    }
   }
 }

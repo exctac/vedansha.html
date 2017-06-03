@@ -1,0 +1,84 @@
+// В этом файле должны быть стили только для БЭМ-блока accordion, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Не пишите здесь другие селекторы.
+
+@mixin accordion($preset: 'none') {
+  $block-name: &;
+
+  &__title{
+    cursor: pointer;
+    user-select: none;
+  }
+
+  &__content {
+    height: 0;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    overflow: hidden;
+    transition: height linear .1s;
+
+    &.js-accordion--open{
+      height: auto;
+    }
+  }
+
+
+  //base preset
+  @if $preset == 'base'{
+
+    &__item{
+      -webkit-border-radius: $border-radius;
+      -moz-border-radius: $border-radius;
+      border-radius: $border-radius;
+      &:nth-child(odd){
+        background-color: $color-white;
+      }
+    }
+
+    &__title{
+      position:relative;
+      padding: .8125rem 1rem .8125rem 3rem;
+      transition: all ease-out .25s;
+      &::before, &:before{
+        position: absolute;
+        content: '\f059';
+        left: 1rem;
+        font-size: px-to-rem(18);
+        top: 1rem;
+        color: $color-green;
+        font-family: FontAwesome;
+      }
+
+      &.js-accordion--open{
+
+        &::after, &:after{
+        }
+      }
+    }
+    &__title--inner {
+      font-size: 1.25rem;
+      line-height: 1.5rem;
+      color: $color-green;
+      display: inline;
+      border-bottom: 1px solid;
+    }
+    &__content{
+      padding: .8125rem 1rem .8125rem 3rem;
+      transition: height ease-out .25s;
+      position: relative;
+      &::before, &:before{
+        position:absolute;
+        content: '\f06a';
+        left: 1rem;
+        font-size: px-to-rem(18);
+        top: 0;
+        color: $color-orange;
+        font-family: FontAwesome;
+      }
+    }
+  }
+}
+
+.accordion {
+  @include accordion("base");
+}

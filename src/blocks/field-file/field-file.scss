@@ -44,31 +44,31 @@ $border-radius:               3px !default;
     display: flex;
     align-items: baseline;
     width: 100%;
-    background-color: #fff;
-    border: 1px solid $border-color;
+    background-color: $color-blue;
     border-radius: $border-radius;
     white-space: nowrap;
     overflow: hidden;
+    color: $color-white;
     text-overflow: ellipsis;
     cursor: pointer;
 
     &:before {
       content: attr(data-button-text);
       display: block;
-      background-color: $gray-lightest;
-      border-right: 1px solid $border-color;
+      background-color: $color-green;
       margin-right: $field-padding-horizontal;
       line-height: $line-height;
       padding: $field-padding-vertical  $field-padding-horizontal;
       border-top-left-radius: $border-radius;
       border-bottom-left-radius: $border-radius;
+      @include transitions(background-color);
     }
 
     &:hover,
     &:focus {
 
       &:before {
-        background-color: darken($gray-lightest, 10%); // как у обычных кнопок
+        background-color: darken($color-green, 10%); // как у обычных кнопок
       }
     }
   }

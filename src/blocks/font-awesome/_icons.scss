@@ -1,6 +1,36 @@
 /* Font Awesome uses the Unicode Private Use Area (PUA) to ensure screen
    readers do not read off random characters that represent icons */
 
+.#{$fa-css-prefix}-tripadvisor {
+  &:before {
+    content: $fa-var-tripadvisor;
+  }
+}
+.#{$fa-css-prefix}-lotus-o {
+  &:before {
+    content: $fa-var-lotus-o;
+  }
+}
+.#{$fa-css-prefix}-ebs-logo {
+  &:before {
+    content: $fa-var-ebs-logo;
+  }
+}
+.#{$fa-css-prefix}-ebs-partner-logo {
+  &:before {
+    content: $fa-var-ebs-partner-logo;
+  }
+}
+.#{$fa-css-prefix}-tripaneer-symbol {
+  &:before {
+    content: $fa-var-tripaneer-symbol;
+  }
+}
+.#{$fa-css-prefix}-yogatrail {
+  &:before {
+    content: $fa-var-yogatrail;
+  }
+}
 .#{$fa-css-prefix}-cube-questions-mark {
   &:before {
     content: $fa-var-cube_questions_mark;
@@ -2866,9 +2896,9 @@
     content: $fa-var-gg-circle;
   }
 }
-.#{$fa-css-prefix}-tripadvisor {
+.#{$fa-css-prefix}-tripadvisor-o {
   &:before {
-    content: $fa-var-tripadvisor;
+    content: $fa-var-tripadvisor-o;
   }
 }
 .#{$fa-css-prefix}-odnoklassniki {

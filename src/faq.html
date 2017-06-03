@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html class="js page" lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>FAQ</title>
+  <meta name="description" content="">
+  @@include('_include/page_head.html')
+</head>
+
+<body class="layout">
+<div class="layout__row">
+  @@include('_include/page_header.html')
+</div>
+<div class="layout__row layout__row_total">
+  <div class="page__line">
+    <div class="central">
+      <ul class="breadcrumbs">
+        <li class="breadcrumbs__item"><a href="" class="breadcrumbs__link"><span class="icon icon-home"></span></a></li>
+        <li class="breadcrumbs__item">FAQ</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="page__line page__line--blue page__line--content">
+    <div class="central central--hollow">
+      <h1 class="page__title heading text-color-orange">FAQ</h1>
+      <div class="accordion" id="js-accordion" data-block="accordion">
+        <div class="accordion__item js-accordion--open">
+          <div class="accordion__title js-accordion--open">
+            <h2 class="accordion__title--inner">Responsive Accordion</h2>
+          </div>
+          <div class="accordion__content js-accordion--open">
+            <p>Here is my attempt at creating a object oriented-ish accordion using BEM CSS guidlines. This accordion is fully responsive and completely barebones, making it easy to style however you want.</p>
+          </div>
+        </div>
+        <div class="accordion__item">
+          <div class="accordion__title">
+            <h2 class="accordion__title--inner">Height Auto Transition</h2>
+          </div>
+          <div class="accordion__content">
+            <p>Accordion transitions are handled by CSS3 transitions. To make the accordion responsive, I've implemented a way to basically pull off a height: 0; to height: auto; transition.</p>
+            <p>This transition is pulled off by expanding __content to the element's scrollHeight and then setting the height to auto using transitionend. The reverse animation is achieved using a 4ms delay between reassignign the content height and animating the height back to 0.</p>
+          </div>
+        </div>
+        <div class="accordion__item">
+          <div class="accordion__title">
+            <h2 class="accordion__title--inner">Data Attribute vs JS-Class</h2>
+          </div>
+          <div class="accordion__content">
+            <p>I bounced back and forth between applying the .js-accordion--open class and using a data-state. I stuck with a simple class since jsperf indicates data-attributes still take a performance hit.</p>
+            <p>Ultimately, neither trigger case adheres directly to the BEM guidelines. I wanted to be able simply use modifiers (ex: .accordion__content--open), but filtering through a sea of element--modifier combinations or using i-bem was something I didn't want to tackle.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="layout__row">
+  @@include('_include/page_footer.html')
+</div>
+@@include('_include/page_bottom.html')
+</body>
+
+</html>

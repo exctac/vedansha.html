@@ -11,6 +11,7 @@ $line-height: 1.25em !default;
 // Add additional sizes if necessary, highly recommended you change this to be
 // tailored to your breakpoints, that match the design.
 $default-grid-map: (
+  xxs : 320px,
   xs  : 480px,
   sm  : 640px,
   md  : 800px,
@@ -43,6 +44,23 @@ $default-grid-font-size-normal: 1rem !default;
 	.#{$class-container}--center {
 		text-align: center; }
 
+	.#{$class-container}--flex {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-flex: 0;
+		-ms-flex: 0 1 auto;
+		flex: 0 1 auto;
+		-webkit-box-orient: horizontal;
+		-webkit-box-direction: normal;
+		-ms-flex-direction: row;
+		flex-direction: row;
+		-ms-flex-wrap: wrap;
+		flex-wrap: wrap;
+	}
+	.#{$class-container}--full-height {
+		height: 100%;
+	}
 	.#{$class-container}--right {
 		text-align: right; }
 
@@ -157,5 +175,36 @@ $default-grid-font-size-normal: 1rem !default;
 	@include grid-cell($grid-gutter, $grid-map: $grid-map);
 	@include grid-width-default($grid-columns, $grid-map: $grid-map);
 	@include grid-width-bp($grid-map);}
+
+// flex order first
+.#{$default-class-cell}--first {
+	-webkit-box-ordinal-group: 0;
+	-ms-flex-order: -1;
+	order: -1;
+}
+@each $breakpoint, $width in $default-grid-map {
+	@media (min-width: $width) {
+		.#{$default-class-cell}--#{$breakpoint}-first {
+			-webkit-box-ordinal-group: 0;
+			-ms-flex-order: -1;
+			order: -1;
+		}
+	}
+}
+// flex order last
+.#{$default-class-cell}--last {
+	-webkit-box-ordinal-group: 2;
+	-ms-flex-order: 1;
+	order: 1;
+}
+@each $breakpoint, $width in $default-grid-map {
+	@media (min-width: $width) {
+		.#{$default-class-cell}--#{$breakpoint}-last {
+			-webkit-box-ordinal-group: 2;
+			-ms-flex-order: 1;
+			order: 1;
+		}
+	}
+}
 
 @include grid;

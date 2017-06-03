@@ -1,33 +1,40 @@
 // Variables
 // --------------------------
 
-$fa-font-path:        "../fonts" !default;
-$fa-font-size-base:   1em !default;
+$fa-font-path: "../fonts" !default;
+$fa-font-size-base: 1em !default;
 $fa-line-height-base: 1.25 !default;
 //$fa-font-path:        "//netdna.bootstrapcdn.com/font-awesome/4.7.0/fonts" !default; // for referencing Bootstrap CDN font files directly
-$fa-css-prefix:       icon !default;
-$fa-version:          "4.7.0" !default;
-$fa-border-color:     #eee !default;
-$fa-inverse:          #fff !default;
-$fa-li-width:         (30em / 14) !default;
+$fa-css-prefix: icon !default;
+$fa-version: "4.7.0" !default;
+$fa-border-color: #eee !default;
+$fa-inverse: #fff !default;
+$fa-li-width: (2em) !default;
 
-$fa-var-cube_questions_mark: "\e900";
-$fa-var-moon: "\e901";
-$fa-var-views: "\e902";
-$fa-var-lotus: "\e903";
-$fa-var-om-symbol: "\e904";
-$fa-var-chat: "\e905";
-$fa-var-square-facebook: "\e906";
-$fa-var-square-google-plus: "\e907";
-$fa-var-square-twitter: "\e908";
-$fa-var-square-vk: "\e909";
-$fa-var-square-youtube: "\e90a";
-$fa-var-callback-phone: "\e90b";
-$fa-var-thin-chevron-right: "\e90c";
-$fa-var-thin-chevron-up: "\e90d";
-$fa-var-thin-chevron-left: "\e90e";
-$fa-var-thin-chevron-down: "\e90f";
-$fa-var-ruby: "\e910";
+
+$fa-var-tripadvisor: "\e912";
+$fa-var-lotus-o: "\70";
+$fa-var-ebs-logo: "\43";
+$fa-var-ebs-partner-logo: "\44";
+$fa-var-tripaneer-symbol: "\3e";
+$fa-var-yogatrail: "\e900";
+$fa-var-cube_questions_mark: "\e901";
+$fa-var-moon: "\e902";
+$fa-var-views: "\e903";
+$fa-var-lotus: "\e904";
+$fa-var-om-symbol: "\e905";
+$fa-var-chat: "\e906";
+$fa-var-square-facebook: "\e907";
+$fa-var-square-google-plus: "\e908";
+$fa-var-square-twitter: "\e909";
+$fa-var-square-vk: "\e90a";
+$fa-var-square-youtube: "\e90b";
+$fa-var-callback-phone: "\e90c";
+$fa-var-thin-chevron-right: "\e90d";
+$fa-var-thin-chevron-up: "\e90e";
+$fa-var-thin-chevron-left: "\e90f";
+$fa-var-thin-chevron-down: "\e910";
+$fa-var-ruby: "\e911";
 $fa-var-glass: "\f000";
 $fa-var-music: "\f001";
 $fa-var-search: "\f002";
@@ -584,7 +591,7 @@ $fa-var-registered: "\f25d";
 $fa-var-creative-commons: "\f25e";
 $fa-var-gg: "\f260";
 $fa-var-gg-circle: "\f261";
-$fa-var-tripadvisor: "\f262";
+$fa-var-tripadvisor-o: "\f262";
 $fa-var-odnoklassniki: "\f263";
 $fa-var-odnoklassniki-square: "\f264";
 $fa-var-get-pocket: "\f265";

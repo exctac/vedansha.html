@@ -2,47 +2,48 @@
 // модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
 // Не пишите здесь другие селекторы.
 
-$line-height:                 1.375em !default;
-
-$text-color:                  hsl(0, 0%, 10%) !default;
-
-$border-color:                hsl(0, 0%, 60%) !default;
-
 .pagination {
-  display: flex;
   flex-wrap: wrap;
-  margin-top: $line-height;
-  margin-bottom: $line-height;
-
+  margin-top: 1rem;
+  line-height: 1.25rem;
+  font-size: $font-size--h2;
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+    width: 100%;
+  }
+  &__title {
+    float: left;
+    color: $color-orange;
+  }
+  &__nav {
+    float: right;
+  }
   &__item {
-    display: block;
-    padding: 0.5em;
-    min-width: 2.5em;
-    border: 1px solid $border-color;
+    display: inline-block;
+    vertical-align: middle;
     text-decoration: none;
-    text-align: center;
-    color: $text-color;
-
+    border-bottom: 1px solid $color-green;
     & + & {
-      border-left: 0;
+      margin-left: 1rem;
     }
 
     &:hover,
     &:focus {
-      text-decoration: none;
-      color: $text-color;
+      border-bottom: none;
     }
 
     @at-root a#{&} {
-
       &:hover,
       &:focus {
-        background-color: $gray-lightest;
+
       }
     }
 
     &--active {
-      background-color: $gray-lightest;
+      color: $color-orange;
+      border-bottom: none;
     }
   }
 }

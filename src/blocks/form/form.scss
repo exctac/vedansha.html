@@ -4,9 +4,9 @@
 
 $font-family--headings:       -apple-system, BlinkMacSystemFont, 'Roboto', 'Ubuntu', 'Droid Sans', 'Helvetica Neue', 'Arial', sans-serif !default;
 
-$font-size--h3:               1.5em !default;
+$font-size--h2:               1.25rem !default;
 
-$line-height:                 1.375em !default;
+$line-height:                 1.5em !default;
 
 .form {
 
@@ -28,12 +28,10 @@ $line-height:                 1.375em !default;
   legend {
     display: block;
     width: 100%;
-    font-size: $font-size--h3;
+    font-size: $font-size--h2;
     font-family: $font-family--headings;
-    font-weight: 700;
     line-height: $line-height;
-    color: currentColor;
-    margin-top: $line-height;
-    margin-bottom: ($line-height / 2);
+    color: $color-orange;
+    margin-bottom: 1rem;
   }
 }
