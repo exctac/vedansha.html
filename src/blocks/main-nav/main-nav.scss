@@ -43,11 +43,7 @@ $transition-time:             0.3s !default;
     @media (min-width: $menu-desktop-width) {
       display: flex;
     }
-    &--lvl-2 {
-      @media (min-width: $menu-desktop-width) {
-        display: block;
-      }
-    }
+
   }
 
   &__item {
@@ -61,7 +57,6 @@ $transition-time:             0.3s !default;
       }
     }
     &:hover {
-
       @media (min-width: $menu-desktop-width) {
         background-color: $color-green;
         overflow: inherit;
@@ -74,12 +69,7 @@ $transition-time:             0.3s !default;
       text-align: center;
       line-height: 1rem;
     }
-    &--lvl-2 {
-      @media (min-width: $menu-desktop-width) {
-        text-align: left;
-        line-height: $line-height;
-      }
-    }
+
   }
 
   &__link {
@@ -95,26 +85,7 @@ $transition-time:             0.3s !default;
     @media (min-width: $menu-desktop-width) {
       padding: 1rem 0;
     }
-    &--lvl-2 {
-      color: $color-yellow;
-      @media (min-width: $menu-desktop-width) {
-        padding: 0;
-        display: inline;
-        text-decoration: underline;
-        color: $color-white;
-      }
-      #{$block-name}__item--lvl-2:first-child & {
-        padding-top: 0;}
-      #{$block-name}__item--lvl-2:last-child & {
-        padding-bottom: 0;}
-    }
 
-    &--lvl-3 {
-
-      @media (max-width: ($menu-desktop-width - px-to-rem(1))) {
-        padding-left: 2.4em;
-      }
-    }
   }
 
   &__lvl {
@@ -122,51 +93,76 @@ $transition-time:             0.3s !default;
     margin-left: 1rem;
     border-left: 1px solid rgba(255, 255, 255, 0.47);
     @media (min-width: $menu-desktop-width) {
-      padding: 0 1rem 1rem 1rem;
+      padding: 0 0 1rem 0;
       margin: 0;
       border: none;
       background-color: $color-green;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      z-index: 10;
+      opacity: 0;
+      height: 0;
+      transition: opacity $transition-time;
+      #{$block-name}__item--show-child > &,
+      #{$block-name}__item:hover & {
+        opacity: 1;
+        height: auto;
+        overflow: visible;
+      }
     }
-    &--2 {
+    & & {
+      background: $color-gray;
+      padding: 1rem 0;
+      left: 100%;
+      top:0;
+    }
+    & & & {
+      background: $color-gray-light;
+      #{$block-name}__link {
+        color: $color-gray;
+      }
+    }
+    #{$block-name}__link {
+      color: $color-yellow;
       @media (min-width: $menu-desktop-width) {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        z-index: 10;
-        opacity: 0;
-        height: 0;
-        transition: opacity $transition-time;
-        #{$block-name}__item--show-child > &,
-        #{$block-name}__item:hover & {
-          opacity: 1;
-          height: auto;
-          overflow: visible;
+        padding: 0 1rem;
+        display: block;
+        width:100%;
+        text-decoration: underline;
+        color: $color-white;
+        &:hover,
+        &:focus {
+          text-decoration: none;
+        }
+      }
+      #{$block-name}__item:first-child & {
+        padding-top: 0;}
+      #{$block-name}__item:last-child & {
+        padding-bottom: 0;}
+    }
+    #{$block-name}__item {
+      @media (min-width: $menu-desktop-width) {
+        text-align: left;
+        line-height: $line-height;
+        display: flex;
+
+        &:hover {
+          background: none;
         }
       }
     }
-
-    &--3 {
-
+    #{$block-name}__list {
       @media (min-width: $menu-desktop-width) {
-        position: absolute;
-        z-index: 1;
-        top: 0;
-        left: 100%;
-        opacity: 0;
-        height: 0;
-        overflow: hidden;
-        transition: opacity $transition-time;
-
-        #{$block-name}__item--show-child > &,
-        #{$block-name}__item--lvl-2:hover & {
-          opacity: 1;
-          height: auto;
-          overflow: visible;
-        }
+        display: block;
       }
     }
   }
-
+  &__arrow {
+    color: $color-white;
+    margin-left: 1rem;
+    float: right;
+  }
 
 
   // переключатель
